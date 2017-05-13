@@ -13,8 +13,8 @@
  * specifiying conditions for SHM (spring constant, dx, etc.).
  * @author Sam Olaogun
  */
-
 'use strict';
+
 /**
  * Pseudo conditions:
  * Essentially,  phase shifts and scales make the conditions mutable
@@ -48,13 +48,14 @@ const requestAnimationFrame =
  */
 const easeOutElastic = (t, b, c, d) =>
     /*
-    	The function is shifted .05 to the right. This translates to x = (x - .05) algebraically
-    	The higher the value of the domain end, which in this case is 5, the more precise the simulation
-    	is because as the value of x increases, the function nears the limit (0).
-    */
+     * The function is shifted .05 to the right. This translates to x = (x - .05) algebraically
+     * The higher the value of the domain end, which in this case is 5, the more precise the simulation
+     * is because as the value of x increases, the function nears the limit (0).
+     */
     c / 1.6142 * -Math.pow(Math.E, -(t = t / d * TENSION + .05)) * Math.cos(2 * Math.PI * t) + c + 1;
 
 const box = document.createElement('div');
+box.classList.add('box');
 document.body.appendChild(box);
 
 let start, dur;
