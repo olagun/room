@@ -55,7 +55,7 @@ const easeOutElastic = (t, b, c, d) =>
     c / 1.6142 * -Math.pow(Math.E, -(t = t / d * TENSION + .05)) * Math.cos(2 * Math.PI * t) + c + 1;
 
 const box = document.createElement('div');
-box.classList.add('box');
+box.classList.add('spring');
 document.body.appendChild(box);
 
 let start, dur;
